@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import List from './List'
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   static defaultProps = {
     store: {
       lists: [],
@@ -11,7 +11,8 @@ class App extends Component {
   };
 
   render() {
-    const { store } = this.props
+    const  store = this.props.store
+    console.log(this.props)
     return (
       <main className='App'>
         <header className='App-header'>

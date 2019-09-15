@@ -2,14 +2,19 @@ import React from 'react';
 import './List.css';
 import Card from './Card.js'
 
-function List(props) {
-  return (
+class List extends React.Component {
+  static defaultProps = {
+    header: 'Header',
+    cards: []
+  };
+render () {
+    return (
    <section className="List">
        <header className="List-header">
-           <h2>{props.header}</h2>
+           <h2>{this.props.header}</h2>
        </header>
        <div className='List-cards'>
-        {props.cards.map((card) =>
+        {this.props.cards.map((card) =>
           <Card
             key={card.id}
             title={card.title}
@@ -22,7 +27,7 @@ function List(props) {
         </button>
       </div>
    </section>
-  )
+  )}
 }
 
 export default List;
